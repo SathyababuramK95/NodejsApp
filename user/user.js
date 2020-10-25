@@ -83,13 +83,13 @@ function createLoginSession(userData,req,res) {
                 Utils.sendFailureResponse({ error:  "error while generating token" },req,res,error);
                 return;
             }
-            newLoginSession.token = sessionToken;
+            let token = sessionToken;
             newLoginSession.save((err,sessionData)=>{
                 if(err){
                     Utils.sendFailureResponse({ error:  "error while saving session" },req,res,err);
                     return;
                 }
-                Utils.sendSuccessResponse({ sessionData : sessionData },res);
+                Utils.sendSuccessResponse({ sessionData : sessionData, token : sessionToken },res);
                 return;
             });
         });

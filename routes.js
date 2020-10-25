@@ -10,7 +10,8 @@ module.exports = function(router) {
 
 
     //image upload
-    router.post('/user/imageupload', imageUpload.multiImageUpload);
+    router.post('/image/imageupload', imageUpload.multiImageUpload);
+    router.post('/image/deleteimage', imageUpload.deleteImage);
 
 
 }

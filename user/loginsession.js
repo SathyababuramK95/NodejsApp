@@ -11,10 +11,6 @@ let LoginSessionSchema = new Schema({
         required: true,
         reference: 'User'
     },
-    token : {
-        type : String,
-        required : true
-    },
     loggedinat : {
         type : Date,
         required : true
